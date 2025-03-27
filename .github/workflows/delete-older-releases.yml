@@ -26,5 +26,7 @@ jobs:
 #保留的版本数量
           delete_tags: true
 #表示是否删除与被删除版本关联的标签
+          delete_workflows: false
+#关闭删除工作流运行记录的功能，即不会对工作流运行记录进行删除操作
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

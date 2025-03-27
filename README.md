@@ -1,7 +1,7 @@
 ## 当前编译状态：
 | 源码+版本 | 固件编译状态 | 脚本文件 | 固件下载 |
 | :-------------: | :-------------: | :-------------: | :-------------: |
-| [![](https://img.shields.io/badge/Lede-6.6-32C955.svg?logo=openwrt)](https://github.com/ranqingwen/OpenWrt_x64_2305/blob/main/.github/workflows/OpenWrt_x64.yml) | [![](https://github.com/ranqingwen/OpenWrt_x64_2305/actions/workflows/OpenWrt_x64.yml/badge.svg)](https://github.com/ranqingwen/OpenWrt_x64_2305/actions/workflows/OpenWrt_x64.yml) | [![](https://img.shields.io/badge/脚本-配置-orange.svg?logo=apache-spark)](https://github.com/ranqingwen/OpenWrt_x64_2305/tree/main/diy_script/lede_diy/x86) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/ranqingwen/OpenWrt_x64_2305/releases) |
+| [![](https://img.shields.io/badge/Lede-6.6-32C955.svg?logo=openwrt)](https://github.com/ranqingwen/OpenWrt-autobuild/blob/main/.github/workflows/OpenWrt_x64.yml) | [![](https://github.com/ranqingwen/OpenWrt-autobuild/actions/workflows/OpenWrt_x64.yml/badge.svg)](https://github.com/ranqingwen/OpenWrt-autobuild/actions/workflows/OpenWrt_x64.yml) | [![](https://img.shields.io/badge/脚本-配置-orange.svg?logo=apache-spark)](https://github.com/ranqingwen/OpenWrt-autobuild/tree/main/diy_script/lede_diy/x86) | [![](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://github.com/ranqingwen/OpenWrt-autobuild/releases) |
 
 </br>
 

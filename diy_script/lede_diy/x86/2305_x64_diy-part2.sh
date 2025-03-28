@@ -87,6 +87,11 @@ rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 git clone --depth=1 -b v5 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
 
+# netdata
+rm -rf feeds/packages/net/netdata
+rm -rf feeds/luci/applications/luci-app-netdata
+git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
+
 # passwall
 # rm -rf feeds/luci/applications/luci-app-passwall
 # merge_package main https://github.com/xiaorouji/openwrt-passwall package/custom luci-app-passwall

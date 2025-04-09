@@ -19,7 +19,7 @@ on:
     - cron: 0 4 * * 4
 
 #分钟字段：0 表示在分钟为UTC时间为0的时候执行，既整点。
-#小时字段：4 表示在小时为UTC时间为4的时候执行。北京时间+8，既12点。
+#小时字段：2 表示在小时为UTC时间为4的时候执行。北京时间+8，既10点。
 #日期字段：* 日期，表示在每月的第几天执行。
 #月份字段：* 表示月份，即 1 到 12 月都会匹配。
 #星期字段：4 表示匹配周几，如果指定了日期情况下，星期的设置在将不起实际作用。此时为每周4。
@@ -259,6 +259,27 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        
+    - name: 删除workflow，清理工作流
+      continue-on-error: true
+      if: env.GH_TOKEN
+      uses: small-5/delete-workflow-runs@main
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        repository: ${{ github.repository }}
+        retain_min: 1  ##保留的最小数量
+    
+    - name: 清理releases
+      continue-on-error: true
+      if: env.GH_TOKEN
+      uses: ophub/delete-releases-workflows@main
+      with:
+        delete_releases: true
+        releases_keep_latest: ${{ env.KEEP_LATEST }}
+        delete_tags: true
+        delete_workflows: false
+        workflows_keep_day: 30
+        gh_token: ${{ secrets.GH_TOKEN }}
 
     - name: 编译固件
       id: compile

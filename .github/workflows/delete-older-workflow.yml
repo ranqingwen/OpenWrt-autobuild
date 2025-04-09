@@ -18,11 +18,12 @@ jobs:
     name: delete-workflow-runs
     steps:
     
-    - name: 删除workflow，清理工作流
-      continue-on-error: true
-      if: env.GH_TOKEN
-      uses: small-5/delete-workflow-runs@main
-      with:
-        token: ${{ secrets.GH_TOKEN }}
-        repository: ${{ github.repository }}
-        retain_min: 1  ##保留的最小数量
+      - name: 删除workflow，清理工作流
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+#数据或操作记录的保留天数
+          keep_minimum_runs: 1
+#保留运行记录或实例的数量

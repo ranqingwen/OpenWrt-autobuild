@@ -126,16 +126,14 @@ git clone --depth=1 -b js https://github.com/lwb1978/luci-theme-kucat package/lu
 # cp -f $GITHUB_WORKSPACE/personal/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # 显示增加编译时间
-
-# 个性签名
-sed -i "s/Customized_Information/"Lede by ranqw $(TZ=UTC-8 build_date "+%Y.%m.%d")"/g" "${DEFAULT_PATH}"
+sed -i "s/DISTRIB_REVISION='R[0-9]\+\.[0-9]\+\.[0-9]\+'/DISTRIB_REVISION='@R$build_date'/g" package/lean/default-settings/files/zzz-default-settings
+sed -i 's/Openwrt by ranqw/g' package/lean/default-settings/files/zzz-default-settings
 
 # 修改右下角脚本版本信息
-
 sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a class="luci-link" href="https://github.com/ranqingwen/OpenWrt-autobuild/releases" target="_blank">下载最新版</a>|' package/luci-theme-argon/luasrc/view/themes/argon/footer.htm
-
+sed -i 's/<a class=\"luci-link\" href=\"https:\/\/github.com\/openwrt\/luci\" target=\"_blank\">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)<\/a>/OpenWrt by ranqw/' package/luci-theme-argon/luasrc/view/themes/argon/footer.htm
 # 修改登录界面脚本版本信息
-
+sed -i "/<a class=\"luci-link\"/d; /<a href=\"https:\/\/github.com\/jerrykuku\/luci-theme-argon\"/d; s|<%= ver.distversion %>|OpenWrt/LEDE by ranqw @R$build_date|" package/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
 
 # 修改欢迎banner
 cp -f $GITHUB_WORKSPACE/personal/banner package/base-files/files/etc/banner

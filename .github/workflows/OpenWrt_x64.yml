@@ -197,6 +197,8 @@ jobs:
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
+        # 添加替换 luci-app-netdata 插件源的命令
+        echo "src-git luci_app_netdata https://github.com/sirpdboy/luci-app-netdata" >> feeds.conf.default
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 更新插件源

@@ -1,8 +1,9 @@
 #===============================================
 # Description: OpenWrt_2305_x64
-# License: MIT
-# By: ranqw
+# Lisence: MIT
+# By：ranqw
 #===============================================
+
 name: OpenWrt_x64
 
 on:

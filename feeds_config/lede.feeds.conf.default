@@ -3,6 +3,10 @@ src-git packages https://github.com/coolsnowwolf/packages;master
 src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05
 src-git routing https://github.com/openwrt/routing.git;openwrt-23.05
 src-git telephony https://github.com/openwrt/telephony.git;openwrt-23.05
+src-git linkease https://github.com/linkease/istore.git;main
+src-git nas https://github.com/linkease/nas-packages.git;master
+src-git nas_luci https://github.com/linkease/nas-packages-luci.git;master
+src-git oaf https://github.com/destan19/OpenAppFilter.git;master
 
 #src-git video https://github.com/openwrt/video.git
 #src-git targets https://github.com/openwrt/targets.git
